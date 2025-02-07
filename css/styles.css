@@ -22,6 +22,7 @@
 
   .navbar-brand, .nav-link {
     color: #ffffff !important;
+    font-weight: bold;
   }
 
   .nav-link:hover {
@@ -35,11 +36,13 @@
 
   h1, h2 {
     color: #ffffff;
+    font-weight: bold;
   }
 
   p {
     /* color: #ffffff; */
     color: #8c8b8a;
+    font-weight: bold;
   }
 
   .text-justify {
