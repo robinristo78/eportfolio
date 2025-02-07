@@ -1,0 +1,87 @@
+  body, html {
+    scroll-behavior: smooth;
+    background-color: #1b2838;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+  }
+
+  body {
+    margin-top: 5vh;
+    display: flex;
+  }
+
+  .navbar {
+    background-color: black !important;
+    border-bottom: 2px solid #66c0f4;
+  }
+
+  .navbar img {
+    width: 7vh;
+    height: 7vh;
+  }
+
+  .navbar-brand, .nav-link {
+    color: #ffffff !important;
+  }
+
+  .nav-link:hover {
+    color: #66c0f4 !important;
+    text-decoration: underline;
+  }
+
+  #main {
+    flex: 1;
+  }
+
+  h1, h2 {
+    color: #ffffff;
+  }
+
+  p {
+    /* color: #ffffff; */
+    color: #8c8b8a;
+  }
+
+  .col {
+    height: 80vh;
+  }
+
+  .row {
+    margin: auto;
+  }
+
+  .card {
+    display: flex;
+    background-color: #0d131b;
+    border-radius: 1px;
+    padding: 20px;
+    box-shadow: 0 2px 2px rgba(63, 63, 63, 0.6);
+  }
+
+  .card img {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .card hr {
+    color: #66c0f4;
+  }
+
+  .cv-button {
+    background-color: #66c0f4;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    width: 100%;
+    max-width: 10rem;
+    border: 2px solid #66c0f4;
+  }
+
+  .cv-button:hover {
+      background-color: #58a3d9;
+      color: white;
+  }
+
+  

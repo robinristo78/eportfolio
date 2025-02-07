@@ -1,0 +1,137 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap 5.3 Stylesheet -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+    <!-- Custom Style -->
+     <link rel="stylesheet" href="./css/styles.css">
+
+    <title>Robin Risto Kivit | E-Portfolio</title>
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#main">
+                <img src="./img/Logo 2.svg" alt="logo">
+                Robin Risto Kivit
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main -->
+    <div id="main" class="container pt-5">
+        <!-- About -->
+        <div id="about" class="row g-3">
+            <div class="col col-3">
+                <div class="card h-100" style="justify-content: center; align-items: center;">
+                    <div style="flex: 1;"><img src="./img/79437629_p0_master1200.png" alt="minust pilt"></div>
+                    <br>
+                    <a href="https://www.canva.com/design/DAGUOnUdK18/hmLK4apQsqICPud2Dnn9QA/view?utm_content=DAGUOnUdK18&utm_campaign=designshare&utm_medium=link&utm_source=editor" target="_blank" class="btn cv-button">CV</a>
+                </div>
+            </div>
+            <div class="col col-9">
+                <div class="card h-100">
+                    <div style="flex: 1; text-align: justify;">
+                        <h2>About Me</h2>
+                        <hr>
+                        <p>My name is Robin Risto Kivit, and I am <span id="age"></span> years old.</p>
+
+                        <br>
+
+                        <p>
+                            I am currently pursuing a Junior Software Developer qualification at Tartu Vocational College, where I am expanding my expertise in HTML/CSS, JavaScript, and MySQL. 
+                            My interest in programming began at a young age, and I have been passionate about the field since primary school.
+                        </p>
+                        <p>
+                            During secondary school, I furthered my knowledge of HTML and CSS through elective courses. 
+                            I subsequently attended Tallinn University of Technology Tartu College, where I studied C++ and Python. 
+                            Additionally, I began learning JavaScript independently before enrolling at Tartu Vocational College.
+                        </p>
+
+                        <br>
+
+                        <p>
+                            In my free time, I enjoy reading, learning new things, and playing video games (Strategy & Logistical - e.g.
+                            Factorio).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills -->
+         
+        <div id="skills" class="row g-3">
+            <div class="col col-12">
+                <div class="card h-100">
+                    <div style="flex: 1; text-align: justify;">
+                        <h2>Skills</h2>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <div id="projects" class="row g-3">
+            <div class="col col-12">
+                <div class="card h-100">
+                    <div style="flex: 1; text-align: justify;">
+                        <h2>Projects</h2>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contacts -->
+        <div id="projects" class="row g-3">
+            <div class="col col-12">
+                <div class="card h-100">
+                    <div style="flex: 1; text-align: justify;">
+                        <h2>Contacts</h2>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Bootstrap 5.3 Script -->
+    <script src="./js/bootstrap.min.js"></script>
+    
+    <!-- id: age updater -->
+    <script>
+        const birthdate = new Date('2002-02-22');
+
+        const currentDate = new Date();
+
+        let age = currentDate.getFullYear() - birthdate.getFullYear();
+        const month = currentDate.getMonth();
+        const day = currentDate.getDate();
+
+        if (month < birthdate.getMonth() || (month === birthdate.getMonth() && day < birthdate.getDate())) {
+            age--;
+        }
+
+        document.getElementById('age').textContent = age;
+    </script>
+</body>
+</html>
