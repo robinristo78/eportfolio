@@ -1,0 +1,13 @@
+text:
+#ffffff (valge)
+#8c8b8a (hall)
+
+taust:
+#1b2838 (sinakas must)
+#0d131b (sinakas must - tumedam)
+
+#000000 (must)
+
+detailid:
+#66c0f4 (helesinine)
+#58a3d9 (helesinine - tumedam)
