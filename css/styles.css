@@ -42,8 +42,8 @@
     color: #8c8b8a;
   }
 
-  .col {
-    height: 80vh;
+  .text-justify {
+    text-align: justify;
   }
 
   .row {
@@ -51,6 +51,7 @@
   }
 
   .card {
+    height: 100%;
     display: flex;
     background-color: #0d131b;
     border-radius: 1px;
@@ -61,8 +62,8 @@
   .card img {
     height: auto;
     width: 100%;
-    object-fit: cover;
-    border-radius: 50%;
+    object-fit: cover;;
+    border-radius: 5%;
   }
 
   .card hr {
@@ -83,5 +84,6 @@
       background-color: #58a3d9;
       color: white;
   }
+
 
   
