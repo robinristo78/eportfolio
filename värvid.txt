@@ -1,6 +1,6 @@
 text:
 #ffffff (valge)
-#8c8b8a (hall)
+#cccccc (hall)
 
 taust:
 #1b2838 (sinakas must)

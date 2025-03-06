@@ -1,8 +1,15 @@
   body, html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
     background-color: #1b2838;
     color: #ffffff;
     font-family: 'Arial', sans-serif;
+  }
+
+  @media (max-width: 992px) {
+    body, html {
+      scroll-padding-top: 80px;
+    }
   }
 
   body {
@@ -20,9 +27,10 @@
     height: auto;
   }
 
-  .navbar-brand, .nav-link {
+  .navbar-brand, .nav-link, #contact a {
     color: #ffffff !important;
     font-weight: bold;
+    text-decoration: none;
   }
 
   .nav-link:hover {
@@ -30,8 +38,50 @@
     text-decoration: underline;
   }
 
+  #contact a:hover {
+    color: #66c0f4 !important;
+  }
+
+  .navbar-toggler {
+    padding: 10px;
+    outline: none;
+    box-shadow: none;
+    border-width: 0;
+  }
+
+  .navbar-toggler:focus, .navbar-toggler:active {
+    outline: none !important;
+    box-shadow: none !important;
+    border-width: 0;
+  }
+
+  .navbar-toggler:active {
+    background-color: rgba(128, 128, 128, 0.3);
+    border-radius: 50%;
+  }
+
   #main {
     flex: 1;
+  }
+
+  #age {
+    cursor: pointer;
+  }
+
+  #skills div p {
+    /* color: #66c0f4; */
+    color: #ffffff;
+    font-weight: bold;
+  }
+
+  #skills div div div {
+    display: inline-block;
+    border-radius: 4%;
+    padding: 6px;
+    background-color: #66c0f4;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 8rem;
   }
 
   h1, h2 {
@@ -41,8 +91,8 @@
 
   p {
     /* color: #ffffff; */
-    color: #8c8b8a;
-    font-weight: bold;
+    color: #cccccc;
+    font-size: 14px;
   }
 
   .text-justify {
@@ -65,8 +115,14 @@
   .card img {
     height: auto;
     width: 100%;
-    object-fit: cover;;
+    object-fit: cover;
     border-radius: 5%;
+  }
+
+  @media (max-width: 992px) {
+    .card img {
+        width: 50%;
+    }
   }
 
   .card hr {
@@ -74,19 +130,34 @@
   }
 
   .cv-button {
-    background-color: #66c0f4;
+    background-color: transparent;
     color: white;
     font-weight: bold;
     font-size: 1.5rem;
-    width: 100%;
+    width: 60%;
+    height: 3rem;
     max-width: 10rem;
     border: 2px solid #66c0f4;
   }
 
-  .cv-button:hover {
+  .cv-button:hover, .cv-button:active {
       background-color: #58a3d9;
       color: white;
   }
 
+  .pr-button {
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    width: 60%;
+    height: 10rem;
+    border: 2px solid #66c0f4;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 
-  
+  .pr-button:hover, .pr-button:active {
+    background-color: #58a3d9;
+    color: white;
+}

@@ -6,24 +6,30 @@
     <!-- Bootstrap 5.3 Stylesheet -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
 
+    <!-- Mfizz Font for C++ icon -->
+    <link rel="stylesheet" href="./css/font-mfizz/font-mfizz.css">
+
     <!-- Custom Style -->
      <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="./img/logo 2.svg" type="image/svg+xml">
 
     <title>Robin Risto Kivit | E-Portfolio</title>
 </head>
 <body>
 
     <!-- Sidebar Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="./img/Logo 2.svg" alt="logo">
+                <img src="./img/logo 2.svg" alt="logo">
                 Robin Risto Kivit
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+                <span><img src="./img/menu.svg" width="30" height="30"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse " id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
@@ -38,13 +44,16 @@
     <div id="main" class="container pt-5">
         <!-- About -->
         
-        <div id="about" class="row g-3 align-items-stretch">
+        <div class="row g-3 align-items-stretch">
             <div class="col-12 col-lg-3 d-flex">
                 <div class="card w-100 d-flex flex-column justify-content-between align-items-center">
-                    <div class="d-flex mb-3 align-items-center justify-content-center"><img src="./img/79437629_p0_master1200.png" alt="minust pilt"></div>
-                    <div class="text-justify">
-                        <p>"Kujuta ette, et siin on üks väga korralik ütlemine." </p>
-                        <p class="text-center">Robin Risto Kivit</p>
+                    <div class="d-flex mb-3 align-items-center justify-content-center">
+                        <img src="./img/79437629_p0_master1200.png" alt="minust pilt">
+                    </div>
+                    <hr>
+                    <div class="text-center">
+                        <p>"Kui elu annab sulle sidruneid, ütle elule, et ta võtaks need sidrunid tagasi!"</p>
+                        <p>Cave johnson</p>
                     </div>
                     <a href="https://www.canva.com/design/DAGUOnUdK18/hmLK4apQsqICPud2Dnn9QA/view?utm_content=DAGUOnUdK18&utm_campaign=designshare&utm_medium=link&utm_source=editor" target="_blank" class="btn cv-button">CV</a>
                 </div>
@@ -55,13 +64,11 @@
                     <div class="row flex-grow-1">
                         
                         <!-- About Me -->
-                        <div class="card h-100">
-                            <div class="card-body text-justify">
+                        <div id="about" class="card h-100">
+                            <div class="text-justify">
                                 <h2>About Me</h2>
                                 <hr>
-                                <p>My name is Robin Risto Kivit, and I am <span id="age"></span> years old.</p>
-        
-                                <br>
+                                <p>My name is Robin Risto Kivit, and I am <abbr id="age" title="This uses a script that calculate my age by comparing the current date with the my birth date, adjusting for any differences in months and days."></abbr> years old.</p>
         
                                 <p>
                                     I am currently pursuing a Junior Software Developer qualification at Tartu Vocational College, where I am expanding my expertise in HTML/CSS, JavaScript, and MySQL. 
@@ -73,8 +80,6 @@
                                     Additionally, I began learning JavaScript independently before enrolling at Tartu Vocational College.
                                 </p>
         
-                                <br>
-        
                                 <p>
                                     In my free time, I enjoy reading, learning new things, and playing video games (Strategy & Logistical - e.g.
                                     Factorio).
@@ -83,11 +88,18 @@
                         </div>
 
                         <!-- Skills -->
-                        <div id="skills" class="card h-100 mt-3">
-                            <div class="card-body text-justify">
+                        <div id="skills" class="card h-100 g-lg-4 g-sm-3">
+                            <div class="text-justify">
                                 <h2>Skills</h2>
                                 <hr>
-                                <p>pole</p>
+                                <div class="d-flex">
+                                    <div class="d-flex justify-content-between align-items-center"><i class="fa-brands fa-html5  fa-2xl "></i> <span>HTML</span></div>
+                                    <div class="d-flex justify-content-between align-items-center"><i class="fa-brands fa-css3-alt fa-2xl"></i> <span>CSS</span></div>
+                                    <div class="d-flex justify-content-between align-items-center"><i class="fa-brands fa-js fa-2xl"></i> <span>JavaScript</span></div>
+                                    <div class="d-flex justify-content-between align-items-center"><i class="icon-mysql-alt fa-xl"></i> <span>MySQL</span></div>
+                                    <div class="d-flex justify-content-between align-items-center"><i class="icon-cplusplus fa-xl"></i> <span>C++</span></div>
+                                    <div class="d-flex justify-content-between align-items-center"><i class="fa-brands fa-python fa-2xl"></i> <span>Python</span></div>
+                                </div>
                             </div>
                         </div>
 
@@ -103,9 +115,11 @@
                     <div class="flex-grow-1 text-justify">
                         <h2>Projects</h2>
                         <hr>
-                        <p>Tegemata tööd ainult on, v.a 1:</p>
-                        <p>NB! Selle nupu välimus on ajutine!</p>
-                        <a href="https://robinristo78.github.io/Lopuprojekt-HTML-CSS-VS24/Projekt/" target="_blank" class="btn cv-button">GAMECAT</a>
+                        <div class="d-flex justify-content-between ">
+                            <a href="https://robinristo78.github.io/Lopuprojekt-HTML-CSS-VS24/Projekt/TICTACTOE.html" target="_blank" class="btn pr-button" style="place-content: center;"><div>TIC TAC TOE</div></a>
+                            <a href="https://robinristo78.github.io/Lopuprojekt-HTML-CSS-VS24/Projekt/TIMEWASTER.html" target="_blank" class="btn pr-button" style="place-content: center;"><div>Time Waster</div></a>
+                            <a href="https://github.com/robinristo78/web-shop" target="_blank" class="btn pr-button" style="place-content: center;"><div>web-shop</div></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -118,13 +132,27 @@
                     <div class="flex-grow-1 text-justify">
                         <h2>Contact</h2>
                         <hr>
-                        <p>Olen erak.</p>
+                        <p>
+                            <a href="mailto:robin-risto.kivit@voco.ee">
+                                <i class="fa-solid fa-square-envelope fa-2xl" title="Email"></i> robin-risto.kivit@voco.ee
+                            </a>
+                        </p>
+                        <p>
+                            <a href="https://www.linkedin.com/in/robin-kivit-76a122265/" target="_blank">
+                                <i class="fa-brands fa-linkedin fa-2xl" title="LinkedIn"></i> Robin Kivit
+                            </a>
+                        </p>
+                        <p>
+                            <a href="https://github.com/robinristo78" target="_blank">
+                                <i class="fa-brands fa-square-github  fa-2xl" title="GitHub"></i> robinristo78
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
         
-        <div class="mt-5 text-center">
+        <div class="mt-5 text-center" style="color: #cccccc;">
             Robin Risto Kivit &copy 2025
         </div>
 
@@ -134,21 +162,10 @@
     <!-- Bootstrap 5.3 Script -->
     <script src="./js/bootstrap.min.js"></script>
     
-    <!-- id: age updater -->
-    <script>
-        const birthdate = new Date('2002-02-22');
+    <!-- Custom Scripts -->
+    <script src="./js/scripts.js"></script>
 
-        const currentDate = new Date();
-
-        let age = currentDate.getFullYear() - birthdate.getFullYear();
-        const month = currentDate.getMonth();
-        const day = currentDate.getDate();
-
-        if (month < birthdate.getMonth() || (month === birthdate.getMonth() && day < birthdate.getDate())) {
-            age--;
-        }
-
-        document.getElementById('age').textContent = age;
-    </script>
+    <!-- Fontawesome icons -->
+    <script src="https://kit.fontawesome.com/829e65a4dd.js" crossorigin="anonymous"></script>
 </body>
 </html>
