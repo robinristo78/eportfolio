@@ -153,8 +153,8 @@
     width: 60%;
     height: 10rem;
     border: 2px solid #66c0f4;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: 1vw;
+    margin-right: 1vw;
   }
 
   .pr-button:hover, .pr-button:active {
