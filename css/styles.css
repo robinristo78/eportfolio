@@ -68,19 +68,15 @@
     cursor: pointer;
   }
 
-  #skills div p {
-    /* color: #66c0f4; */
-    color: #ffffff;
-    font-weight: bold;
-  }
-
   #skills div div div {
     display: inline-block;
-    border-radius: 4%;
-    padding: 6px;
-    background-color: #66c0f4;
+    border-radius: 0.25rem;
+    border: 1px solid #66c0f4;
+    padding: 8px;
+    /* background-color: #66c0f4; */
+    color: #ffffff;
     margin-right: 10px;
-    margin-bottom: 10px;
+    margin-top: 10px;
     width: 8rem;
   }
 
@@ -131,7 +127,7 @@
 
   .cv-button {
     background-color: transparent;
-    color: white;
+    color: #ffffff;
     font-weight: bold;
     font-size: 1.5rem;
     width: 60%;
@@ -142,12 +138,11 @@
 
   .cv-button:hover, .cv-button:active {
       background-color: #58a3d9;
-      color: white;
   }
 
   .pr-button {
     background-color: transparent;
-    color: white;
+    color: #ffffff;
     font-weight: bold;
     font-size: 1.5rem;
     width: 60%;
@@ -155,9 +150,25 @@
     border: 2px solid #66c0f4;
     margin-left: 1vw;
     margin-right: 1vw;
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pr-button div i {
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
 
   .pr-button:hover, .pr-button:active {
     background-color: #58a3d9;
-    color: white;
-}
+    color: #ffffff;
+  }
+
+  .pr-button:hover div i, .pr-button:active div i {
+    color: #ffffff;
+    opacity: 1;
+  }
+
