@@ -75,9 +75,14 @@
     padding: 8px;
     /* background-color: #66c0f4; */
     color: #ffffff;
-    margin-right: 10px;
-    margin-top: 10px;
+    /* margin-right: 10px;
+    margin-top: 10px; */
     width: 8rem;
+  }
+
+  #footer {
+    color: #cccccc;
+    text-align: center;
   }
 
   h1, h2 {
