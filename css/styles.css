@@ -143,6 +143,7 @@
 
   .cv-button:hover, .cv-button:active {
       background-color: #58a3d9;
+      color: #ffffff;
   }
 
   .pr-button {
