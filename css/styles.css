@@ -68,6 +68,16 @@
     cursor: pointer;
   }
 
+  #skills div div {
+    justify-content: start;
+  }
+
+  @media (max-width: 768px) {
+    #skills div div {
+        justify-content: space-between;
+    }
+  }
+
   #skills div div div {
     display: inline-block;
     border-radius: 0.25rem;
@@ -79,6 +89,7 @@
     margin-top: 10px; */
     width: 8rem;
   }
+
 
   #footer {
     color: #cccccc;
