@@ -264,9 +264,26 @@ const addModalProjectLink = (container, href, label) => {
     container.append(link);
 };
 
+const getProjectColumnCount = (projectCount) => {
+    if (projectCount <= 3) return Math.max(projectCount, 1);
+
+    const layouts = [3, 4].map((columns) => ({
+        columns,
+        emptySlots: Math.ceil(projectCount / columns) * columns - projectCount
+    }));
+
+    return layouts.reduce((best, current) => {
+        if (current.emptySlots < best.emptySlots) return current;
+        if (current.emptySlots === best.emptySlots && current.columns > best.columns) return current;
+        return best;
+    }).columns;
+};
+
 const renderProjects = (projectsData) => {
     const container = document.querySelector('[data-project-grid]');
     if (!container) return;
+
+    container.style.setProperty('--project-columns', getProjectColumnCount(projectsData.projects.length));
 
     projectsData.projects.forEach((project) => {
         const card = document.createElement('div');
