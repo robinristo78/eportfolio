@@ -5,12 +5,14 @@ document.addEventListener('click', function (event) {
 
     if (!navbar || !toggleButton) return;
 
+    if (navbar.classList.contains('show') && event.target.closest('.nav-link')) {
+        bootstrap.Collapse.getOrCreateInstance(navbar, { toggle: false }).hide();
+        return;
+    }
+
     if (!navbar.contains(event.target) && !toggleButton.contains(event.target)) {
         if (navbar.classList.contains('show')) {
-            const collapse = new bootstrap.Collapse(navbar, {
-                toggle: false
-            });
-            collapse.hide();
+            bootstrap.Collapse.getOrCreateInstance(navbar, { toggle: false }).hide();
         }
     }
 });
