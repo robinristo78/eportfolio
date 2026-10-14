@@ -210,16 +210,16 @@
     color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 0.5rem;
-    box-shadow:
-      0 0 0 1px rgba(255, 255, 255, 0.06),
-      0 0 0 5px rgba(0, 0, 0, 0.18),
-      0 24px 64px rgba(0, 0, 0, 0.62),
-      inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
 
   #projectModal .modal-content hr {
     width: 95%;
     margin-inline: auto;
+  }
+
+  #projectModal .modal-header {
+    align-items: center;
+    min-height: 3.5rem;
   }
 
   #projectModal .btn-close:focus:not(:focus-visible) {
@@ -257,8 +257,12 @@
   #projectModal .project-modal-title {
     flex: 1 1 0%;
     min-width: 0;
+    margin: 0;
+    height: 24px;
+    line-height: 24px;
     text-align: left;
     white-space: nowrap;
+    overflow: hidden;
   }
 
   #projectModalDescription {
