@@ -27,6 +27,12 @@
     height: auto;
   }
 
+  @media (max-width: 329px) {
+    .navbar-brand-name {
+      display: none;
+    }
+  }
+
   .navbar-brand, .nav-link, #contact a {
     color: #ffffff !important;
     font-weight: bold;
