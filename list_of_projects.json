@@ -45,7 +45,7 @@
 			"title": "web-shop",
 			"repositoryUrl": "https://github.com/robinristo78/web-shop",
 			"pagesUrl": null,
-			"image": null,
+			"image": "./img/web-shop.webp",
 			"skills": ["html", "css", "javascript", "mysql"]
 		},
 		{
@@ -53,7 +53,7 @@
 			"title": "Hinnapõx",
 			"repositoryUrl": "https://github.com/robinristo78/hinnapox_app",
 			"pagesUrl": "https://robinristo78.github.io/hinnapox_app/",
-			"image": null,
+			"image": "./img/hinnapox.webp",
 			"skills": ["react", "typescript", "mobile"]
 		},
 		{
@@ -61,7 +61,7 @@
 			"title": "React Movie Management",
 			"repositoryUrl": "https://github.com/robinristo78/React_OmaRakendus",
 			"pagesUrl": "https://robinristo78.github.io/React_OmaRakendus/",
-			"image": null,
+			"image": "./img/React_OmaRakendus.webp",
 			"skills": ["react", "javascript", "css"]
 		},
 		{
@@ -69,7 +69,7 @@
 			"title": "Cybersecurity Game",
 			"repositoryUrl": "https://github.com/robinristo78/cybersecgame",
 			"pagesUrl": null,
-			"image": null,
+			"image": "./img/cybersecgame.webp",
 			"skills": ["react", "javascript", "css"]
 		}
 	]
