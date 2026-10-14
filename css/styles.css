@@ -217,6 +217,11 @@
       inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
 
+  #projectModal .modal-content hr {
+    width: 95%;
+    margin-inline: auto;
+  }
+
   #projectModal .btn-close:focus:not(:focus-visible) {
     outline: none;
     box-shadow: none;
