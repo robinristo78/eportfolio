@@ -33,14 +33,61 @@ if (ageEl) ageEl.textContent = age;
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = currentDate.getFullYear();
 
-document.querySelectorAll('.pr-button').forEach((card) => {
-    const imageUrl = card.dataset.projectImage?.trim();
+const makeSkillIcon = (skill, key, size = skill.iconSize) => {
+    const icon = document.createElement('i');
+    icon.classList.add(...skill.iconClass.split(/\s+/), size);
+    icon.setAttribute('aria-hidden', 'true');
+    icon.title = skill.label;
+    icon.dataset.skill = key;
+    return icon;
+};
+
+const renderProfileSkills = (projectsData) => {
+    const container = document.querySelector('[data-profile-skills]');
+    if (!container) return;
+
+    projectsData.profileSkills.forEach((key) => {
+        const skill = projectsData.skills[key];
+        if (!skill) return;
+
+        const item = document.createElement('div');
+        item.className = 'd-flex justify-content-between align-items-center';
+        item.append(makeSkillIcon(skill, key));
+
+        const label = document.createElement('span');
+        label.textContent = skill.label;
+        item.append(label);
+        container.append(item);
+    });
+};
+
+const addProjectLink = (container, href, label, className) => {
+    if (!href) return;
+
+    const link = document.createElement('a');
+    link.href = href;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.textContent = label;
+    link.setAttribute('aria-label', label);
+    Object.assign(link.style, {
+        position: 'relative',
+        zIndex: '1',
+        color: '#ffffff',
+        fontSize: '0.75rem',
+        textDecoration: 'underline'
+    });
+    if (className) link.className = className;
+    container.append(link);
+};
+
+const initializeProjectCard = (card, project, skills) => {
     let image;
     let overlay;
 
-    if (imageUrl) {
+    if (project.image) {
         image = document.createElement('img');
-        image.src = imageUrl;
+        image.src = project.image;
         image.alt = '';
         image.setAttribute('aria-hidden', 'true');
         Object.assign(image.style, {
@@ -65,14 +112,38 @@ document.querySelectorAll('.pr-button').forEach((card) => {
             transition: 'background-color 220ms ease',
             pointerEvents: 'none'
         });
-
-        card.prepend(image, overlay);
-        const title = card.querySelector(':scope > div:first-of-type');
-        const technologies = card.querySelector(':scope > div:last-of-type');
-        if (title) Object.assign(title.style, { position: 'relative', zIndex: '1' });
-        if (technologies) technologies.style.zIndex = '1';
+        card.append(image, overlay);
         card.style.overflow = 'hidden';
     }
+
+    const title = document.createElement('span');
+    title.textContent = project.title;
+    Object.assign(title.style, {
+        position: 'relative',
+        zIndex: '1',
+        color: '#ffffff'
+    });
+    card.append(title);
+
+    const technologyRow = document.createElement('div');
+    technologyRow.className = 'position-absolute bottom-0 start-0 p-1 d-flex gap-1';
+    technologyRow.style.zIndex = '1';
+    project.skills.forEach((key) => {
+        const skill = skills[key];
+        if (skill) {
+            const icon = makeSkillIcon(skill, key, skill.projectIconSize);
+            icon.style.lineHeight = '1';
+            technologyRow.append(icon);
+        }
+    });
+    card.append(technologyRow);
+
+    const links = document.createElement('div');
+    links.className = 'position-absolute bottom-0 end-0 p-1 d-flex gap-2';
+    links.style.zIndex = '1';
+    addProjectLink(links, project.pagesUrl, 'Demo', 'project-demo-link');
+    addProjectLink(links, project.repositoryUrl, 'Code', 'project-repository-link');
+    card.append(links);
 
     card.style.transition = 'transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease';
 
@@ -102,6 +173,38 @@ document.querySelectorAll('.pr-button').forEach((card) => {
 
     card.addEventListener('mouseenter', showHover);
     card.addEventListener('mouseleave', hideHover);
-    card.addEventListener('focus', showHover);
-    card.addEventListener('blur', hideHover);
-});
+    card.addEventListener('focusin', showHover);
+    card.addEventListener('focusout', (event) => {
+        if (!card.contains(event.relatedTarget)) hideHover();
+    });
+};
+
+const renderProjects = (projectsData) => {
+    const container = document.querySelector('[data-project-grid]');
+    if (!container) return;
+
+    projectsData.projects.forEach((project) => {
+        const card = document.createElement('div');
+        card.className = 'btn pr-button';
+        card.dataset.projectId = project.id;
+        card.setAttribute('role', 'group');
+        card.setAttribute('aria-label', project.title);
+        initializeProjectCard(card, project, projectsData.skills);
+        container.append(card);
+    });
+};
+
+const loadPortfolioData = async () => {
+    try {
+        const response = await fetch('./list_of_projects.json');
+        if (!response.ok) throw new Error(`Project data request failed: ${response.status}`);
+
+        const projectsData = await response.json();
+        renderProfileSkills(projectsData);
+        renderProjects(projectsData);
+    } catch (error) {
+        console.error('Could not load portfolio project data.', error);
+    }
+};
+
+void loadPortfolioData();

@@ -1,0 +1,76 @@
+{
+	"profileSkills": [
+		"html",
+		"css",
+		"javascript",
+		"react",
+		"java",
+		"mysql",
+		"mariadb",
+		"cpp",
+		"python"
+	],
+	"skills": {
+		"html": { "label": "HTML", "iconClass": "fa-brands fa-html5", "iconSize": "fa-2xl", "projectIconSize": "fa-l" },
+		"css": { "label": "CSS", "iconClass": "fa-brands fa-css3-alt", "iconSize": "fa-2xl", "projectIconSize": "fa-l" },
+		"javascript": { "label": "JavaScript", "iconClass": "fa-brands fa-js", "iconSize": "fa-2xl", "projectIconSize": "fa-l" },
+		"react": { "label": "React", "iconClass": "icon-reactjs", "iconSize": "fa-xl", "projectIconSize": "fa-l" },
+		"java": { "label": "Java", "iconClass": "icon-java", "iconSize": "fa-xl", "projectIconSize": "fa-l" },
+		"mysql": { "label": "MySQL", "iconClass": "icon-mysql-alt", "iconSize": "fa-xl", "projectIconSize": "fa-sm" },
+		"mariadb": { "label": "MariaDB", "iconClass": "icon-mariadb", "iconSize": "fa-xl", "projectIconSize": "fa-sm" },
+		"cpp": { "label": "C++", "iconClass": "icon-cplusplus", "iconSize": "fa-xl", "projectIconSize": "fa-sm" },
+		"python": { "label": "Python", "iconClass": "fa-brands fa-python", "iconSize": "fa-2xl", "projectIconSize": "fa-l" },
+		"typescript": { "label": "TypeScript", "iconClass": "fa-brands fa-js", "iconSize": "fa-xl", "projectIconSize": "fa-l" },
+		"mobile": { "label": "Mobile", "iconClass": "icon-mobile-device", "iconSize": "fa-xl", "projectIconSize": "fa-l" }
+	},
+	"projects": [
+		{
+			"id": "tic-tac-toe",
+			"title": "TIC TAC TOE",
+			"repositoryUrl": "https://github.com/robinristo78/Lopuprojekt-HTML-CSS-VS24",
+			"pagesUrl": "https://robinristo78.github.io/Lopuprojekt-HTML-CSS-VS24/Projekt/TICTACTOE.html",
+			"image": "./img/tictactoeweb.webp",
+			"skills": ["html", "css", "javascript"]
+		},
+		{
+			"id": "time-waster",
+			"title": "Time Waster",
+			"repositoryUrl": "https://github.com/robinristo78/Lopuprojekt-HTML-CSS-VS24",
+			"pagesUrl": "https://robinristo78.github.io/Lopuprojekt-HTML-CSS-VS24/Projekt/TIMEWASTER.html",
+			"image": "./img/timewaster.webp",
+			"skills": ["html", "css", "javascript"]
+		},
+		{
+			"id": "web-shop",
+			"title": "web-shop",
+			"repositoryUrl": "https://github.com/robinristo78/web-shop",
+			"pagesUrl": null,
+			"image": null,
+			"skills": ["html", "css", "javascript", "mysql"]
+		},
+		{
+			"id": "hinnapox",
+			"title": "Hinnapõx",
+			"repositoryUrl": "https://github.com/robinristo78/hinnapox_app",
+			"pagesUrl": "https://robinristo78.github.io/hinnapox_app/",
+			"image": null,
+			"skills": ["react", "typescript", "mobile"]
+		},
+		{
+			"id": "react-movie-management",
+			"title": "React Movie Management",
+			"repositoryUrl": "https://github.com/robinristo78/React_OmaRakendus",
+			"pagesUrl": "https://robinristo78.github.io/React_OmaRakendus/",
+			"image": null,
+			"skills": ["react", "javascript", "css"]
+		},
+		{
+			"id": "cybersecgame",
+			"title": "Cybersecurity Game",
+			"repositoryUrl": "https://github.com/robinristo78/cybersecgame",
+			"pagesUrl": null,
+			"image": null,
+			"skills": ["react", "javascript", "css"]
+		}
+	]
+}
