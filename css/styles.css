@@ -260,7 +260,6 @@
   .project-modal-images img {
     flex: 0 0 auto;
     width: auto;
-    max-width: min(420px, 80vw);
     min-height: 236.25px;
     max-height: 236.25px;
     height: 236.25px;
@@ -268,6 +267,14 @@
     scroll-snap-align: start;
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.32);
+  }
+
+  @media (max-width: 469px) {
+    .project-modal-images img {
+      min-height: clamp(165.375px, calc(55.733945vw - 25.14266px), 236.25px);
+      max-height: clamp(165.375px, calc(55.733945vw - 25.14266px), 236.25px);
+      height: clamp(165.375px, calc(55.733945vw - 25.14266px), 236.25px);
+    }
   }
 
   #projectModal .project-modal-title {
