@@ -29,7 +29,7 @@
 			"title": "TIC TAC TOE",
 			"repositoryUrl": "https://github.com/robinristo78/Lopuprojekt-HTML-CSS-VS24",
 			"pagesUrl": "https://robinristo78.github.io/Lopuprojekt-HTML-CSS-VS24/Projekt/TICTACTOE.html",
-			"description": "A classic Tic Tac Toe game built with vanilla HTML, CSS and JavaScript. Features a clean board, win detection and a reset button.",
+			"description": "A classic Tic Tac Toe game built with vanilla HTML, CSS and JavaScript. Features a clean board, win detection, a reset button, and an option to play against a computer.",
 			"images": ["./img/tictactoeweb.webp"],
 			"skills": ["html", "css", "javascript"]
 		},
@@ -38,6 +38,7 @@
 			"title": "Time Waster",
 			"repositoryUrl": "https://github.com/robinristo78/Lopuprojekt-HTML-CSS-VS24",
 			"pagesUrl": "https://robinristo78.github.io/Lopuprojekt-HTML-CSS-VS24/Projekt/TIMEWASTER.html",
+			"description": "A vanilla HTML, CSS and JavaScript endurance game. Click anywhere before the 20-second countdown reaches zero to reset it and keep your session going; an elapsed-time counter and animated progress ring track your run. After game over, click to restart, and try to beat your personal best, saved in the browser with localStorage.",
 			"image": "./img/timewaster.webp",
 			"skills": ["html", "css", "javascript"]
 		},
@@ -46,6 +47,7 @@
 			"title": "web-shop",
 			"repositoryUrl": "https://github.com/robinristo78/web-shop",
 			"pagesUrl": null,
+			"description": "A full-stack web shop built with Express, EJS, MySQL and Bootstrap. Browse a database-backed product catalogue, view product details and manage a cart saved in the browser; an admin interface supports adding, editing and deleting products. The checkout is a demonstration flow rather than payment processing.",
 			"image": "./img/web-shop.webp",
 			"skills": ["html", "css", "javascript", "mysql"]
 		},
@@ -54,6 +56,7 @@
 			"title": "Hinnapõx",
 			"repositoryUrl": "https://github.com/robinristo78/hinnapox_app",
 			"pagesUrl": "https://robinristo78.github.io/hinnapox_app/",
+			"description": "A cross-platform fuel and electricity price companion built with React Native, Expo and TypeScript. Compare petrol, diesel and electricity prices, explore recent price-history charts, and find nearby fuel stations on a map with location-aware navigation and brand filters. Includes language and light/dark theme settings.",
 			"image": "./img/hinnapox.webp",
 			"skills": ["react", "typescript", "mobile"]
 		},
@@ -62,6 +65,7 @@
 			"title": "React Movie Management",
 			"repositoryUrl": "https://github.com/robinristo78/React_OmaRakendus",
 			"pagesUrl": "https://robinristo78.github.io/React_OmaRakendus/",
+			"description": "A React movie-list manager built with Vite. Add and edit movies with a title, release year, genre and rating, then filter the collection by year. React Context manages the list and localStorage keeps it available between visits.",
 			"image": "./img/React_OmaRakendus.webp",
 			"skills": ["react", "javascript", "css"]
 		},
@@ -70,6 +74,7 @@
 			"title": "Cybersecurity Game",
 			"repositoryUrl": "https://github.com/robinristo78/cybersecgame",
 			"pagesUrl": null,
+			"description": "A React-based cybersecurity quiz game inspired by a televised prize ladder. Choose an easy, medium or hard starting level, answer timed questions that grow more challenging, and build your score toward the top reward. Each question has a 60-second limit, and game results are saved locally in a play history; Google sign-in can associate history with an account.",
 			"image": "./img/cybersecgame.webp",
 			"skills": ["react", "javascript", "css"]
 		}

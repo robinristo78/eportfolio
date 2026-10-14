@@ -206,15 +206,21 @@
   }
 
   #projectModal .modal-content {
+    --project-modal-inset: 1rem;
     background-color: #0d131b;
     color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 0.5rem;
   }
 
+  #projectModal .modal-header,
+  #projectModal .modal-body {
+    padding-inline: var(--project-modal-inset);
+  }
+
   #projectModal .modal-content hr {
-    width: 95%;
-    margin-inline: auto;
+    width: auto;
+    margin-inline: var(--project-modal-inset);
   }
 
   #projectModal .modal-header {
@@ -234,7 +240,7 @@
     max-width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
-    padding: 0.5rem 0.25rem 1rem;
+    padding: 0.5rem 0 1rem;
     scroll-snap-type: x proximity;
     scrollbar-color: rgba(255, 255, 255, 0.36) transparent;
     scrollbar-width: thin;
@@ -246,9 +252,12 @@
 
   .project-modal-images img {
     flex: 0 0 auto;
-    width: min(280px, 80vw);
-    height: 180px;
-    object-fit: cover;
+    width: auto;
+    max-width: min(420px, 80vw);
+    min-height: 270px;
+    max-height: 270px;
+    height: 270px;
+    object-fit: contain;
     scroll-snap-align: start;
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.32);
