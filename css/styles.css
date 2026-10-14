@@ -199,6 +199,13 @@
     gap: 1rem;
   }
 
+  @media (min-width: 769px) {
+    .project-grid[data-columns="3"] .pr-button {
+      height: auto;
+      aspect-ratio: var(--project-card-ratio, 1.6);
+    }
+  }
+
   #projectModal .modal-content {
     --project-modal-inset: 1rem;
     background-color: #0d131b;
@@ -248,9 +255,9 @@
     flex: 0 0 auto;
     width: auto;
     max-width: min(420px, 80vw);
-    min-height: 270px;
-    max-height: 270px;
-    height: 270px;
+    min-height: 236.25px;
+    max-height: 236.25px;
+    height: 236.25px;
     object-fit: contain;
     scroll-snap-align: start;
     border: 1px solid rgba(255, 255, 255, 0.12);

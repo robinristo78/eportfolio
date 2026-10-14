@@ -283,7 +283,30 @@ const renderProjects = (projectsData) => {
     const container = document.querySelector('[data-project-grid]');
     if (!container) return;
 
-    container.style.setProperty('--project-columns', getProjectColumnCount(projectsData.projects.length));
+    const columns = getProjectColumnCount(projectsData.projects.length);
+    container.dataset.columns = columns;
+    container.style.setProperty('--project-columns', columns);
+
+    if (columns === 3) {
+        const updateCardRatio = () => {
+            const gridWidth = container.clientWidth;
+            const columnGap = parseFloat(window.getComputedStyle(container).columnGap) || 0;
+            const fourColumnCardWidth = (gridWidth - columnGap * 3) / 4;
+            const referenceHeight = parseFloat(window.getComputedStyle(document.documentElement).fontSize) * 10;
+
+            if (fourColumnCardWidth > 0 && referenceHeight > 0) {
+                container.style.setProperty('--project-card-ratio', fourColumnCardWidth / referenceHeight);
+            }
+        };
+
+        if (typeof ResizeObserver !== 'undefined') {
+            new ResizeObserver(updateCardRatio).observe(container);
+        } else {
+            window.addEventListener('resize', updateCardRatio);
+        }
+
+        updateCardRatio();
+    }
 
     projectsData.projects.forEach((project) => {
         const card = document.createElement('div');
