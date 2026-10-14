@@ -29,7 +29,8 @@
 			"title": "TIC TAC TOE",
 			"repositoryUrl": "https://github.com/robinristo78/Lopuprojekt-HTML-CSS-VS24",
 			"pagesUrl": "https://robinristo78.github.io/Lopuprojekt-HTML-CSS-VS24/Projekt/TICTACTOE.html",
-			"image": "./img/tictactoeweb.webp",
+			"description": "A classic Tic Tac Toe game built with vanilla HTML, CSS and JavaScript. Features a clean board, win detection and a reset button.",
+			"images": ["./img/tictactoeweb.webp"],
 			"skills": ["html", "css", "javascript"]
 		},
 		{

@@ -81,13 +81,20 @@ const addProjectLink = (container, href, label, className) => {
     container.append(link);
 };
 
+const getProjectImages = (project) => {
+    const images = Array.isArray(project.images) ? project.images : [project.images];
+    const validImages = images.filter((imagePath) => typeof imagePath === 'string' && imagePath.trim());
+    return validImages.length ? validImages : (project.image ? [project.image] : []);
+};
+
 const initializeProjectCard = (card, project, skills) => {
     let image;
     let overlay;
+    const imagePath = getProjectImages(project)[0] || '';
 
-    if (project.image) {
+    if (imagePath) {
         image = document.createElement('img');
-        image.src = project.image;
+        image.src = imagePath;
         image.alt = '';
         image.setAttribute('aria-hidden', 'true');
         Object.assign(image.style, {
@@ -145,6 +152,72 @@ const initializeProjectCard = (card, project, skills) => {
     addProjectLink(links, project.repositoryUrl, 'Code', 'project-repository-link');
     card.append(links);
 
+    links.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', (event) => event.stopPropagation());
+    });
+
+    const openProjectModal = () => {
+        const modalEl = document.getElementById('projectModal');
+        if (!modalEl) return;
+
+        const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+        const modalTitle = document.getElementById('projectModalTitle');
+        modalTitle.textContent = project.title;
+
+        const resizeModalTitle = () => {
+            const availableWidth = modalTitle.clientWidth;
+            const maxFontSize = parseFloat(window.getComputedStyle(document.documentElement).fontSize) * 1.5;
+            if (!availableWidth) return;
+
+            const titleLength = [...modalTitle.textContent].length;
+            const fontSize = titleLength
+                ? Math.min(maxFontSize, (availableWidth * 0.8) / titleLength)
+                : maxFontSize;
+            modalTitle.style.fontSize = `${fontSize}px`;
+        };
+
+        const handleModalShown = () => {
+            resizeModalTitle();
+            window.addEventListener('resize', resizeModalTitle);
+        };
+        const handleModalHidden = () => window.removeEventListener('resize', resizeModalTitle);
+        modalEl.addEventListener('shown.bs.modal', handleModalShown, { once: true });
+        modalEl.addEventListener('hidden.bs.modal', handleModalHidden, { once: true });
+
+        const modalImages = document.getElementById('projectModalImages');
+        const imagePaths = getProjectImages(project);
+        modalImages.replaceChildren();
+        modalImages.hidden = imagePaths.length === 0;
+        imagePaths.forEach((imagePath, index) => {
+            const modalImage = document.createElement('img');
+            modalImage.src = imagePath;
+            modalImage.alt = `${project.title} image ${index + 1}`;
+            modalImages.append(modalImage);
+        });
+
+        document.getElementById('projectModalDescription').textContent =
+            project.description || 'No description available yet.';
+
+        const modalLinks = document.getElementById('projectModalLinks');
+        modalLinks.replaceChildren();
+        addModalProjectLink(modalLinks, project.pagesUrl, 'Live Demo');
+        addModalProjectLink(modalLinks, project.repositoryUrl, 'View Code');
+
+        modal.show();
+    };
+
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-haspopup', 'dialog');
+    card.addEventListener('click', openProjectModal);
+    card.addEventListener('keydown', (event) => {
+        if (event.target.closest('a')) return;
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openProjectModal();
+        }
+    });
+
     card.style.transition = 'transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease';
 
     const showHover = () => {
@@ -179,6 +252,18 @@ const initializeProjectCard = (card, project, skills) => {
     });
 };
 
+const addModalProjectLink = (container, href, label) => {
+    if (!href) return;
+
+    const link = document.createElement('a');
+    link.href = href;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.textContent = label;
+    link.className = 'btn btn-sm project-modal-link';
+    container.append(link);
+};
+
 const renderProjects = (projectsData) => {
     const container = document.querySelector('[data-project-grid]');
     if (!container) return;
@@ -187,7 +272,6 @@ const renderProjects = (projectsData) => {
         const card = document.createElement('div');
         card.className = 'btn pr-button';
         card.dataset.projectId = project.id;
-        card.setAttribute('role', 'group');
         card.setAttribute('aria-label', project.title);
         initializeProjectCard(card, project, projectsData.skills);
         container.append(card);
