@@ -134,12 +134,6 @@
     justify-content: start;
   }
 
-  @media (max-width: 768px) {
-    #skills div div {
-        justify-content: space-between;
-    }
-  }
-
   #skills div div div {
     display: inline-block;
     border-radius: 0.25rem;
@@ -363,8 +357,80 @@
     }
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 360px) {
     .project-grid {
       grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #skills div div {
+        justify-content: space-between;
+    }
+  }
+
+  @media (max-width: 768px) {
+    html {
+      font-size: 12px; /* 75% of the usual 16px root → scales all rem units */
+    }
+
+    body {
+      margin-top: 4vh;
+    }
+
+    p {
+      font-size: 12px;
+    }
+
+    .card {
+      padding: 15px;          /* 20px × 0.75 */
+    }
+
+    .cv-button {
+      font-size: 1.125rem;    /* 1.5rem × 0.75 */
+      height: 2.25rem;        /* 3rem × 0.75 */
+      max-width: 7.5rem;      /* 10rem × 0.75 */
+    }
+
+    .pr-button {
+      font-size: 1.125rem;    /* 1.5rem × 0.75 */
+      height: 7.5rem;         /* 10rem × 0.75 */
+    }
+
+    .project-grid {
+      gap: 0.75rem;           /* 1rem × 0.75 */
+    }
+
+    #projectModal .modal-content {
+      --project-modal-inset: 0.75rem;
+    }
+
+    #projectModalDescription {
+      font-size: 12px;
+      padding: 0.75rem;
+    }
+
+    .project-modal-images img {
+      min-height: 177px;      /* 236.25px × 0.75 */
+      max-height: 177px;
+      height: 177px;
+    }
+
+    .navbar img {
+      width: 4.125vh;         /* 5.5vh × 0.75 */
+    }
+
+    .navbar-toggler {
+      padding: 7.5px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    html {
+      font-size: 12px;      /* slightly tighter on very small screens */
+    }
+
+    .pr-button {
+      height: 7rem;
     }
   }
