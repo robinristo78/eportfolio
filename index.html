@@ -19,6 +19,13 @@
     <title>Robin Risto Kivit | E-Portfolio</title>
 </head>
 <body>
+    <svg aria-hidden="true" focusable="false" class="background-filters">
+        <filter id="smoke-warp" x="-30%" y="-30%" width="160%" height="160%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.016 0.04" numOctaves="4" seed="8" result="smoke-noise" />
+            <feDisplacementMap in="SourceGraphic" in2="smoke-noise" scale="480" xChannelSelector="R" yChannelSelector="G" />
+            <feGaussianBlur stdDeviation="2.5" />
+        </filter>
+    </svg>
 
     <!-- Sidebar Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
